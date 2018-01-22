@@ -1,0 +1,47 @@
+.LOG
+
+加字段IsSured(是否确认开票)PlanTime(期望开票时间)
+
+业务
+已确认 按钮(查看记录，返回）
+未确认 按钮(确认，返回）
+
+财务
+已确认 按钮(确认，查看记录，返回）
+未确认 按钮(确认，返回）
+
+
+
+8:22 2018/1/18
+<input id="PlanTime" name="PlanTime"  type="text" dataType="datetime" class="input1 datePicker" style="padding:0 5px; margin:0 5px 0 0; width:100px;" title="请选择开始时间" value="@(DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd"))"/> 
+
+$("#txtBeginTime").datepicker({
+            defaultDate: "+1w",
+            changeYear: true,
+            showMonthAfterYear: true,
+            changeMonth: true,
+            numberOfMonths: 1,
+            onClose: function (selectedDate) {
+                $("#txtEndTime").datepicker("option", "minDate", selectedDate);
+            }
+        });
+        9:25 2018/1/18
+        
+
+decimal  TotalAccounts = TotalAccounts + ServicePrice;
+decimal  BillsPrice= BillsPrice+billsService;          
+                
+                
+                
+
+9:04 2018/1/19
+
+string balanceStatus = "未确认";
+ if (model != null)
+{
+     balanceStatus = model.IsBalance == 0 ? "未确认" : "已确认";
+}
+
+
+
+
